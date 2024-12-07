@@ -6,20 +6,29 @@
   <title>chai aur code</title>
 </head>
 <body style = "background-color: #212121;
-color: aliceblue;">
+color: black;">
 
 </body>
 <script>
-  const div =document.createElement('div')
-  console.log(div);
-  div.className = 'main'
+     function createDiv(bgcolor,text) {
+    const div =document.createElement('div')
+    div.className = "main"
   div.id = Math.round(Math.random()*10 + 1)
-  div.setAttribute("title","generatedTitle")
-  div.style.backgroundColor = "green"
+  div.setAttribute("title",`newtitle`)
+  div.style.backgroundColor = `${bgcolor}`
   div.style.padding = "12px"
- const addText = document.createTextNode("chai aur code") 
+ const addText = document.createTextNode(`${text}`) 
  div.appendChild(addText)
-
  document.body.appendChild(div)
+  } 
+  for (let i = 0; i < 2; i++) { 
+   
+    const bgcolor = prompt("enter bgcolor : ")
+    const text = prompt("enter the text : ")
+    createDiv(bgcolor,text)
+ 
+  }
+
+ 
 </script>
 </html>
