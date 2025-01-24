@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>chai aur Javascript</h1>
+  <button id="start">Start</button>
+  <button id="stop">Stop</button>
+</body>
+<script>
+  let intervalId; // Variable to store the interval ID
+
+const sayDate = (str) => {
+  console.log(str, "dushyant", Date.now());
+};
+
+const startI = () => {
+  if (!intervalId) { // Only start a new interval if one isn't already running
+    intervalId = setInterval(sayDate, 2000, "hi");
+  }
+};
+
+const stopI = () => {
+  if (intervalId) { // Only clear the interval if it's running
+    clearInterval(intervalId);
+    intervalId = null; // Reset the interval ID to allow restarting
+    console.log("stopped");
+  }
+};
+
+document.querySelector("#start").addEventListener("click", startI);
+document.querySelector("#stop").addEventListener("click", stopI);
+
+ 
+</script>
+</html>
